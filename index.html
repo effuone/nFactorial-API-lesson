@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.centered-content {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  height: 100%;
+			}
+
+			.rectangle-container {
+				display: flex;
+				align-items: center;
+			}
+		  
+			.rectangle {
+			  background-color: #ff0000; /* Change this to the desired background color */
+			  color: #ffffff; /* Change this to the desired text color */
+			  width: 400px;
+			  height: 400px;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  border-radius: 10px;
+			}
+
+			.small-rectangle {
+				background-color: #ff0000; /* Change this to the desired background color */
+				color: #ffffff; /* Change this to the desired text color */
+				width: 100px;
+				height: 200px;
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+			  }
+
+			  .arrow {
+				position: absolute;
+				top: 50%;
+				left: -200px;
+				transform: translateY(-50%);
+				height: 4px;
+				width: 200px;
+				background-color: #000;
+			  }
+		  
+			  .small-square {
+				background-color: #0000ff; /* Change this to the desired background color */
+				color: #ffffff; /* Change this to the desired text color */
+				width: 50px;
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+			  }
+		  </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="./assets/first_slide.png" ></section>
+				<section>
+					<h4>Что такое API? 🤔</h4>
+					<p>API (Application Programming Interface) — это набор правил и протоколов, позволяющих различным программным приложениям взаимодействовать друг с другом.</p>
+				</section>
+				<section data-auto-animate>
+					<div class="centered-content">
+						<div class="rectangle">
+						  <h3>Ваше приложение</h3>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div class="centered-content">
+						<div class="rectangle-container">
+						  <div class="small-rectangle">
+							<h4>API</h4>
+						  </div>
+						  <div class="rectangle">
+							<h3>Ваше приложение</h3>
+						  </div>
+						</div>
+					  </div>
+				</section>
+				<section>
+					<h4>Что мы можем делать с информацией? 🤔</h4>
+				</section>
+				<section data-auto-animate>
+					<h1 style="margin-top: 50px; color: green;">Создавать</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 style="margin-top: 50px; color: blue;">Получать</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 style="margin-top: 50px; color: orange;">Изменять</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 style="margin-top: 50px; color: red;">Удалять</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 style="margin-top: 50px; color: red;">✨HTTP✨</h1>
+				</section>
+				<section data-auto-animate>
+					<h4>HTTP протокол позволяет</h4>
+					<ul>
+						<li>
+							Создать - POST
+						</li>
+						<li>
+							Получить - GET
+						</li>
+						<li>
+							Изменить - PUT
+						</li>
+						<li>
+							Удалить - DELETE
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h4>✨CRUD✨</h4>
+					<ul>
+						<li style="margin-left: 50px; color: orange">
+							Create
+						</li>
+						<li style="margin-left: 50px; color: orange">
+							Read
+						</li>
+						<li style="margin-left: 50px; color: orange">
+							Update
+						<li style="margin-left: 50px; color: orange">
+							Delete
+						</li>
+					</ul>
+				</section>
+				<section data-background-image="./assets/example_slide.png" ></section>
+				<section data-background-image="./assets/frontend_backend.png" ></section>
+				<section>
+					<pre>
+						<code>
+const url = 'https://api.openai.com/v1/engines/davinci-codex/completions'
+const openAiKey = process.env.OPENAI_API_KEY
+const response = await axios.post(url,
+		{
+			prompt: 'Write me a song about how cool Dalida is',
+			max_tokens: 50,
+		},
+		{
+			headers: {
+			Authorization: openAiKey,
+			"Content-Type": "application/json",
+		},
+	}
+);
+		
+console.log(response.data.choices[0].text)
+						</code>
+					</pre>
+				</section>
+				<section data-background-image="./assets/example_slide.png" ></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
