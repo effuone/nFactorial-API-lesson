@@ -1,16 +1,24 @@
 <!doctype html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
+		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 		<style>
 			.centered-content {
@@ -26,8 +34,8 @@
 			}
 		  
 			.rectangle {
-			  background-color: #ff0000; /* Change this to the desired background color */
-			  color: #ffffff; /* Change this to the desired text color */
+			  background-color: #ff0000;
+			  color: #ffffff; 
 			  width: 400px;
 			  height: 400px;
 			  display: flex;
@@ -37,8 +45,8 @@
 			}
 
 			.small-rectangle {
-				background-color: #ff0000; /* Change this to the desired background color */
-				color: #ffffff; /* Change this to the desired text color */
+				background-color: #ff0000; 
+				color: #ffffff;
 				width: 100px;
 				height: 200px;
 				margin-right: 10px;
@@ -59,8 +67,8 @@
 			  }
 		  
 			  .small-square {
-				background-color: #0000ff; /* Change this to the desired background color */
-				color: #ffffff; /* Change this to the desired text color */
+				background-color: #0000ff; 
+				color: #ffffff; 
 				width: 50px;
 				height: 50px;
 				display: flex;
@@ -68,15 +76,46 @@
 				justify-content: center;
 				border-radius: 5px;
 			  }
-		  </style>
+		</style>
 	</head>
+
 	<body>
+
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background-image="./assets/first_slide.png" ></section>
 				<section>
-					<h4>Что такое API? 🤔</h4>
-					<p>API (Application Programming Interface) — это набор правил и протоколов, позволяющих различным программным приложениям взаимодействовать друг с другом.</p>
+					<img src="assets/first_slide.png" alt="first slide" style="height: 680px; background: transparent;" class="demo-logo">
+				</section>
+				<section>
+					<h4>Lesson objectives 🐱‍💻</h4>
+					<ul>
+						<li>
+							API
+						</li>
+						<li>
+							Axios 
+						</li>
+						<li>
+							HTTP requests and responses 
+						</li>
+						<li>
+							Real-life examples 
+						</li>
+						<li>
+							Homework 
+						</li>
+						<li>
+							Study resources 
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Что такое API? 🤔</h2>
+					<p>
+						API (Application Programming Interface) — это набор правил и протоколов, позволяющих приложениям взаимодействовать друг с другом.
+					</p>
 				</section>
 				<section data-auto-animate>
 					<div class="centered-content">
@@ -97,99 +136,236 @@
 						</div>
 					  </div>
 				</section>
+				<!-- Example of nested vertical slides -->
 				<section>
-					<h4>Что мы можем делать с информацией? 🤔</h4>
+					<section>
+						<h2>Что мы можем делать с информацией? 🤔</h2>
+						<a href="#/2/1" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Create</h2>
+						<p>POST request</p>
+					</section>
+					<section>
+						<h2>Read</h2>
+						<p>GET request</p>
+						<br>
+					</section>
+					<section>
+						<h2>Update</h2>
+						<p>PUT/PATCH request</p>
+						<br>
+					</section>
+					<section>
+						<h2>Delete</h2>
+						<p>DELETE request</p>
+						<br>
+					</section>
 				</section>
-				<section data-auto-animate>
-					<h1 style="margin-top: 50px; color: green;">Создавать</h1>
-				</section>
-				<section data-auto-animate>
-					<h1 style="margin-top: 50px; color: blue;">Получать</h1>
-				</section>
-				<section data-auto-animate>
-					<h1 style="margin-top: 50px; color: orange;">Изменять</h1>
-				</section>
-				<section data-auto-animate>
-					<h1 style="margin-top: 50px; color: red;">Удалять</h1>
-				</section>
-				<section data-auto-animate>
-					<h1 style="margin-top: 50px; color: red;">✨HTTP✨</h1>
-				</section>
-				<section data-auto-animate>
-					<h4>HTTP протокол позволяет</h4>
-					<ul>
-						<li>
-							Создать - POST
-						</li>
-						<li>
-							Получить - GET
-						</li>
-						<li>
-							Изменить - PUT
-						</li>
-						<li>
-							Удалить - DELETE
-						</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h4>✨CRUD✨</h4>
-					<ul>
-						<li style="margin-left: 50px; color: orange">
-							Create
-						</li>
-						<li style="margin-left: 50px; color: orange">
-							Read
-						</li>
-						<li style="margin-left: 50px; color: orange">
-							Update
-						<li style="margin-left: 50px; color: orange">
-							Delete
-						</li>
-					</ul>
-				</section>
-				<section data-background-image="./assets/example_slide.png" ></section>
-				<section data-background-image="./assets/frontend_backend.png" ></section>
 				<section>
-					<pre>
-						<code>
-const url = 'https://api.openai.com/v1/engines/davinci-codex/completions'
-const openAiKey = process.env.OPENAI_API_KEY
-const response = await axios.post(url,
-		{
-			prompt: 'Write me a song about how cool Dalida is',
-			max_tokens: 50,
-		},
-		{
-			headers: {
-			Authorization: openAiKey,
-			"Content-Type": "application/json",
-		},
-	}
-);
-		
-console.log(response.data.choices[0].text)
-						</code>
-					</pre>
+					<img src="assets/example_slide.png" alt="first slide" style="height: 680px; background: transparent;" class="demo-logo">
 				</section>
-				<section data-background-image="./assets/example_slide.png" ></section>
+				<section>
+					<img src="assets/frontend_backend.png" alt="first slide" style="height: 680px; background: transparent;" class="demo-logo">
+				</section>
+				<section>
+					<h3>✨Axios✨ и насколько он популярный</h3>
+					<img src="https://codilime.com/img/axios-vs-fetch-downloads.svg" style="height: 500px; background: transparent;" class="demo-logo">
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">GET request example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1|2|3|4-7|">
+						import axios from 'axios' //import request library
+						const url = 'https://jsonplaceholder.cypress.io/posts/'
+						const response = await axios.get(url, { 
+							params: {
+								_limit: limit, //выбираем сколько постов нам нужно
+								_page: page //выбираем конкретную страницу
+							}
+						})
+					</code></pre>
+					<p>Получаем список всех постов с <a href="https://jsonplaceholder.typicode.com/">Free Fake REST API</a></p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">GET request example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers><script type="text/template">
+						import axios from 'axios'
+						const API_KEY = process.env.SECRET_API_KEY
+						const url = 'https://jsonplaceholder.cypress.io/posts/'
+						const response = await axios.get(url, {
+							params: {
+								_limit: limit,
+								_page: page
+							},
+							headers: {
+								Authorization: API_KEY 
+							}
+						})
+					</script></code></pre>
+					<p>Если сервис не бесплатный нужно указывать headers</a></p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">GET request real-world example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers><script type="text/template">
+						export const maximumNumberOfSulpakPages = async (url) => {
+							const html = (await axios.get(url)).data
+							const $ = cheerio.load(html)
+							const pageNumber = parseInt($('.pages-list', html).children().last().text())
+							if (isNaN(pageNumber)) {
+								return 1;
+							}
+							return pageNumber
+						}
+					</script></code></pre>
+					<p>Получаем HTML страницы и парсим данные через <a href="https://www.npmjs.com/package/cheerio">cheerio.js</a></a></p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">POST request example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						const url = 'https://api.openai.com/v1/engines/davinci-codex/completions'
+						const openAiKey = process.env.OPENAI_API_KEY
+						const postData = {
+							prompt: 'Write me a song about how cool Dalida is',
+							max_tokens: 50
+						}
+						const response = await axios.post(url, postData, {
+								headers: {
+									Authorization: openAiKey 
+								}
+							}
+						)
+						console.log(response.data.choices[0].text)
+					</code></pre>
+					<p>При GET нельзя указывать body запроса, поэтому используется POST</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">PUT request example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						const url = 'https://api.example.com/users/1';
+						const newData = {
+							name: 'John Doe',
+							email: 'john.doe@example.com'
+						}
+						const response = await axios.put(url, newData)
+				
+						console.log(response.data); // HTTP status 204 with empty data 
+					</code></pre>
+					<p>PUT request to update a user's data</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">DELETE request example</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						const url = 'https://api.example.com/users/1';
+						const response = await axios.delete(url);			
+					</code></pre>
+					<p>Sends a DELETE request to delete a user.</p>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title">useState + useEffect + axios = ТЕМА</h4>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1|3|5-6|8|11-13|">
+						const [data, setData] = useState(null);
+
+						const fetchData = async () => {
+							try {
+							  const response = await axios.get(API_URL);
+							  setData(response.data);
+							} catch (error) {
+							  alert(error.message)
+							}
+						}
+						useEffect(() => { 
+						  fetchData();
+						}, []);								  
+					</code></pre>
+					<p>Отправляем request, сохраняем response, радуемся жизни</p>
+				</section>
+
+				
+				<section data-auto-animate>
+					<h4 data-id="code-title">React real-life example</h4>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1-3|4-7|8-11|">
+						const [action, setAction] = useState("Idle");
+						const [songs, setSongs] = useState([])
+						const [playing, setPlaying, setAudio] = useAudio(audioUrl);
+						const fetchSongs = async () => {
+							const response = await SongService.getSongs()
+							setSongs(response.data)
+						}
+						useEffect(()=>{
+							fetchSongs()
+							if(playing === true) setAction('twerkingdance')
+						}, [])						  
+					</code></pre>
+					<p>Получаем музыку, сохраняем в стейт, наслаждаемся <a href="https://dancing-kaireke.vercel.app/play">флексом Кайрата Нуртаса</a></p>
+				</section>
+				<section data-auto-animate>
+					<section>
+						<h4 data-id="code-title">Homework :(</h4>
+						<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+							const TODO_API = 'https://api.todoist.com/rest/v1/tasks'
+							const TODOIST_TOKEN = process.env.TODOIST_TOKEN
+							const PROJECT_ID = 'your project id'
+							class TaskService {
+								static async getAllTasks(){}   
+								static async getTaskById(id){}   
+								static async createNewTask(task){}
+								static async updateNewTask(id, task){}
+								static async deleteNewTask(id){}
+							}
+							export default TaskService;					  
+						</code></pre>
+					</section>
+					<section>
+						<h4>Уровень: красаучик</h4>
+						<p>Реализовать CRUD-service по <a href="https://todoist.com/">https://todoist.com/</a></p>
+					</section>
+					<section>
+						<h4>Уровень: беспредельщик</h4>
+						<p>Переписать localStorage-based todo-app на TaskService</p>
+					</section>
+					<section>
+						<h4>Уровень: ходячая машина</h4>
+						<p>Написать ProjectService для создания коллекций тудушек</p>
+					</section>
+				</section>
+				<section>
+					<img src="assets/ulbitv.PNG" alt="Resources" style="height: 680px; background: transparent;" class="demo-logo">
+				</section>
+				<section style="text-align: center;">
+					<h3>✨Спасибо за внимание✨</h3>
+				</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
+
 	</body>
 </html>
